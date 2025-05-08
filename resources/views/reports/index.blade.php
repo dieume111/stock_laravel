@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
+<a href="{{route('dashboard')}}" class="back-link">
+    <span class="back-arrow">←</span> Back to Dashboard
+</a>
+
 <div class="reports-container">
     <div class="reports-header">
         <h1>Daily Stock Reports</h1>
@@ -13,7 +18,7 @@
     </div>
 
     <div class="reports-content">
-        <!-- Stock In Summary -->
+
         <div class="report-card">
             <h2>Stock In Summary</h2>
             <div class="table-container">
@@ -90,6 +95,28 @@
 </div>
 
 <style>
+    .back-link {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        color:rgb(255, 255, 255);
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: 6px;
+        background-color:rgb(47, 138, 230);
+        transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+        background-color: #e9ecef;
+        transform: translateX(-5px);
+        color:rgb(14, 7, 7);
+    }
+
+    .back-arrow {
+        margin-right: 8px;
+    }
+
     .reports-container {
         max-width: 1200px;
         margin: 0 auto;
