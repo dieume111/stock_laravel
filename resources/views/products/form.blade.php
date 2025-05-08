@@ -3,6 +3,9 @@
 @section('content')
 
 <div class="form-container">
+    <a href="{{ route('products.index') }}" class="back-link">
+        <span class="back-arrow">←</span> Back to Products
+    </a>
     <div class="form-card">
         <h2 class="form-title">{{isset($product) ? 'Update Product' : 'Create Product'}}</h2>
         
@@ -55,9 +58,47 @@
         --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text);
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background-color: var(--blue);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(67, 97, 238, 0.1);
+    }
+
+    .back-link:hover {
+        background-color: var(--primary);
+        color: var(--white);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
+        border-color: var(--primary);
+    }
+
+    .back-link:active {
+        transform: translateY(0);
+    }
+
+    .back-arrow {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .back-link:hover .back-arrow {
+        transform: translateX(-4px);
+    }
+
     .form-container {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
         min-height: calc(100vh - 100px);
         padding: 20px;
